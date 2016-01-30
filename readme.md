@@ -16,6 +16,7 @@ Then you go into Options -> Tracker -> Pluggins -> Battle Cry -> Enable
 
 ## Needs to be done
 
+* Change John Cena Delay to match the end of "Who am I?"
 * Change HardCoded mp3 to card mapper to be done via xml or csv (so anyone can make any sfx on battlecry)
 * Add Other events, like on draw, on death, on win/loose game
 * Fix the time delay as currently it locks the entire thread
