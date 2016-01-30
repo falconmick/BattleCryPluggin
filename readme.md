@@ -1,8 +1,9 @@
 ## Anyfin Can Lethal - A plugin for Hearthstone Deck Tracker
 
-[Download stable]()
+[Download stable](https://github.com/falconmick/AnyfinCanLethal/raw/master/dist/BattleCryPlugin v0.0.1.zip)
 
-Currently in early development. All you have to do is copy the .dll generated into your hearhstone deck tracker plugin folder and and the AudioFiles folder
+Currently in early development. All you have to do is extract the zip into your pluggin folder
+Then you go into Options -> Tracker -> Pluggins -> Battle Cry -> Enable
 
 ## Working
 
