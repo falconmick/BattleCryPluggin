@@ -9,7 +9,7 @@ If you want to customise what card triggers what sound go into the AudioFiles di
 to add another, coppy the SoundPlaySetting node and modify:
 * FileName: what file (relitive to AudioFiles directory) do you want to play
 * CardId: what CardId is it (see [here](https://github.com/falconmick/BattleCryPluggin/blob/master/dist/cardDB.enUS.xml) for card list)
-* Delay: How long to wait until playing audio file
+* Delay: How long to wait until playing audio file (in milliseconds)
 * CardSource: 'All' to play it if either player plays it
 * CardSource: 'Player' to play it ONLY when you play a card
 * CardSource: 'Opponent' to play it ONLY when your opponent plays a card
