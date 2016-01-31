@@ -69,7 +69,7 @@ namespace BattleCry
         {
             get
             {
-                return new Version(0, 0, 2);
+                return new Version(0, 0, 3);
             }
         }
 
@@ -89,6 +89,7 @@ namespace BattleCry
 
         public void OnUpdate()
         {
+            _gameMonitor.Update();
         }
     }
 }

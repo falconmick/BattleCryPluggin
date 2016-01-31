@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Hearthstone_Deck_Tracker.Hearthstone;
 using BattleCry.Sound;
 using BattleCry.Util.Model;
+using BattleCry.Util;
 
 namespace BattleCry.Game
 {
@@ -41,6 +42,11 @@ namespace BattleCry.Game
 
             _soundBoard.Play(soundToPlay);
             Hearthstone_Deck_Tracker.Logger.WriteLine("BattleCry Sound Effect Triggered");
+        }
+
+        public void Update()
+        {
+            _soundBoard.Update();
         }
     }
 }

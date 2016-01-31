@@ -53,8 +53,10 @@
     <Compile Include="Game\IPlayHandler.cs" />
     <Compile Include="Game\IGameMonitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sound\Model\PlayQueueItem.cs" />
     <Compile Include="Sound\SoundBoard.cs" />
     <Compile Include="Sound\ConfigCardSoundPicker.cs" />
+    <Compile Include="Util\IUpdateable.cs" />
     <Compile Include="Util\Model\CardSource.cs" />
     <Compile Include="Util\Model\SoundPlaySetting.cs" />
     <Compile Include="Util\Model\Config.cs" />

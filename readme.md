@@ -1,6 +1,6 @@
 ## Anyfin Can Lethal - A plugin for Hearthstone Deck Tracker
 
-[Download stable](https://github.com/falconmick/BattleCryPluggin/raw/master/dist/BattleCryPlugin%20v0.0.2.zip)
+[Download stable](https://github.com/falconmick/BattleCryPluggin/raw/master/dist/BattleCryPlugin%20v0.0.3.zip)
 
 Currently in early development. All you have to do is extract the zip into your pluggin folder
 Then you go into Options -> Tracker -> Pluggins -> Battle Cry -> Enable

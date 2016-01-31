@@ -4,6 +4,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using BattleCry.Util.Model;
+using BattleCry.Util;
+using System.Collections.Generic;
+using BattleCry.Sound.Model;
 
 namespace BattleCry.Sound
 {
@@ -11,6 +14,7 @@ namespace BattleCry.Sound
     {
         private string _command;
         private readonly string _rootDirectory;
+        private List<PlayQueueItem> _playQueue;
         [DllImport("winmm.dll")]
 
         private static extern long mciSendString(string strCommand, StringBuilder strReturn, int iReturnLength, IntPtr hwndCallback);
@@ -18,6 +22,7 @@ namespace BattleCry.Sound
         public SoundBoard(string rootDirectory)
         {
             _rootDirectory = rootDirectory;
+            _playQueue = new List<PlayQueueItem>();
         }
 
         public void Close()
@@ -28,18 +33,43 @@ namespace BattleCry.Sound
 
         public void Play(SoundPlaySetting soundPlaySettings)
         {
-            Task.Factory.StartNew(() => Thread.Sleep(soundPlaySettings.Delay))
-            .ContinueWith((t) =>
+            _playQueue.Add(new PlayQueueItem
             {
-                Close();
+                SoundPlaySetting = soundPlaySettings,
+                StartPlayingAfter = DateTime.Now.AddMilliseconds(soundPlaySettings.Delay).Ticks
+            });
+        }
 
-                _command = "open \"" + _rootDirectory + soundPlaySettings.FileName + "\" type mpegvideo alias MediaFile";
-                mciSendString(_command, null, 0, IntPtr.Zero);
+        private void DelayedPlayback(SoundPlaySetting soundPlaySettings)
+        {
+            Close();
 
-                _command = "play MediaFile";
+            _command = "open \"" + _rootDirectory + soundPlaySettings.FileName + "\" type mpegvideo alias MediaFile";
+            mciSendString(_command, null, 0, IntPtr.Zero);
 
-                mciSendString(_command, null, 0, IntPtr.Zero);
-            }, TaskScheduler.FromCurrentSynchronizationContext());
+            _command = "play MediaFile";
+
+            mciSendString(_command, null, 0, IntPtr.Zero);
+        }
+
+        public void Update()
+        {
+            var nowTicks = DateTime.Now.Ticks;
+            var itemsToRemove = new List<PlayQueueItem>();
+
+            foreach(var item in _playQueue)
+            {
+                if(nowTicks >= item.StartPlayingAfter)
+                {
+                    DelayedPlayback(item.SoundPlaySetting);
+                    itemsToRemove.Add(item);
+                }
+            }
+
+            foreach(var item in itemsToRemove)
+            {
+                _playQueue.Remove(item);
+            }
         }
     }
 }
