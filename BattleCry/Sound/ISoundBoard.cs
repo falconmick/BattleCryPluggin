@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BattleCry.Util.Model;
 
-namespace BattleCry
+namespace BattleCry.Sound
 {
-    interface IGameMonitor
+    interface ISoundBoard
     {
-        void Initialize();
+        void Play(SoundPlaySetting soundPlaySettings);
     }
 }

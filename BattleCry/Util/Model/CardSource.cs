@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleCry
+namespace BattleCry.Util.Model
 {
-    class SoundPlaySetting
+    public enum CardSource
     {
-        public string FileName { get; set; }
-        public int Delay { get; set; }
+        Player = 1,
+        Opponent = 2,
+        All = 3
     }
 }

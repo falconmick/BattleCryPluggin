@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleCry
+namespace BattleCry.Game
 {
-    interface ISoundBoard
+    interface IGameMonitor
     {
-        void Play(SoundPlaySetting soundPlaySettings);
+        void Initialize();
     }
 }

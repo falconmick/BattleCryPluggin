@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Hearthstone_Deck_Tracker.Hearthstone;
+using BattleCry.Sound;
+using BattleCry.Util.Model;
 
-namespace BattleCry
+namespace BattleCry.Game
 {
     class PlayHandler : IPlayHandler
     {
@@ -20,17 +22,17 @@ namespace BattleCry
 
         public void OnOpponentPlay(Card card)
         {
-            OnPlay(card);
+            OnPlay(card, CardSource.Opponent);
         }
 
         public void OnPlayerPlay(Card card)
         {
-            OnPlay(card);
+            OnPlay(card, CardSource.Player);
         }
 
-        private void OnPlay(Card card)
+        private void OnPlay(Card card, CardSource cardSource)
         {
-            var soundToPlay = _cardSoundPicker.GetBattleCryFor(card);
+            var soundToPlay = _cardSoundPicker.GetBattleCryFor(card, cardSource);
             if(soundToPlay == null)
             {
                 Hearthstone_Deck_Tracker.Logger.WriteLine("BattleCry SFX not found");

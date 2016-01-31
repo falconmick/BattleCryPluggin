@@ -45,17 +45,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HardCodedCardSoundPicker.cs" />
-    <Compile Include="ICardSoundPicker.cs" />
-    <Compile Include="ISoundBoard.cs" />
-    <Compile Include="PlayHandler.cs" />
+    <Compile Include="Sound\ICardSoundPicker.cs" />
+    <Compile Include="Sound\ISoundBoard.cs" />
+    <Compile Include="Game\PlayHandler.cs" />
     <Compile Include="BattleCryPlugin.cs" />
-    <Compile Include="GameMonitor.cs" />
-    <Compile Include="IPlayHandler.cs" />
-    <Compile Include="IGameMonitor.cs" />
+    <Compile Include="Game\GameMonitor.cs" />
+    <Compile Include="Game\IPlayHandler.cs" />
+    <Compile Include="Game\IGameMonitor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SoundBoard.cs" />
-    <Compile Include="SoundPlaySetting.cs" />
+    <Compile Include="Sound\SoundBoard.cs" />
+    <Compile Include="Sound\ConfigCardSoundPicker.cs" />
+    <Compile Include="Util\Model\CardSource.cs" />
+    <Compile Include="Util\Model\SoundPlaySetting.cs" />
+    <Compile Include="Util\Model\Config.cs" />
+    <Compile Include="Util\XmlConfigManager.cs" />
+    <Compile Include="Util\IConfigManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

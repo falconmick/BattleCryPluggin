@@ -5,17 +5,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BattleCry.Sound;
+using BattleCry.Game;
+using BattleCry.Util;
 
 namespace BattleCry
 {
     public class BattleCryPlugin : IPlugin
     {
         private readonly IGameMonitor _gameMonitor;
+        private readonly string _soundFileDir = "Plugins\\AudioFiles\\";
 
         public BattleCryPlugin()
         {
-            var soundBoard = new SoundBoard("Plugins\\AudioFiles\\");
-            var cardSoundPicker = new HardCodedCardSoundPicker();
+            var soundBoard = new SoundBoard(_soundFileDir);
+            var configManager = new XmlConfigManager();
+            var cardSoundPicker = new ConfigCardSoundPicker(configManager, _soundFileDir + "cardsoundconfig.xml");
             var playHandler = new PlayHandler(soundBoard, cardSoundPicker);
             _gameMonitor = new GameMonitor(playHandler);
         }
@@ -64,7 +69,7 @@ namespace BattleCry
         {
             get
             {
-                return new Version(0, 0, 1);
+                return new Version(0, 0, 2);
             }
         }
 

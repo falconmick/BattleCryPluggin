@@ -1,9 +1,18 @@
 ## Anyfin Can Lethal - A plugin for Hearthstone Deck Tracker
 
-[Download stable](https://github.com/falconmick/BattleCryPluggin/raw/master/dist/BattleCryPlugin%20v0.0.1.zip)
+[Download stable](https://github.com/falconmick/BattleCryPluggin/raw/master/dist/BattleCryPlugin%20v0.0.2.zip)
 
 Currently in early development. All you have to do is extract the zip into your pluggin folder
 Then you go into Options -> Tracker -> Pluggins -> Battle Cry -> Enable
+
+If you want to customise what card triggers what sound go into the AudioFiles directory inside of pluggins and modify cardsoundconfig.xml
+to add another, coppy the SoundPlaySetting node and modify:
+* FileName: what file (relitive to AudioFiles directory) do you want to play
+* CardId: what CardId is it (see [here](https://github.com/falconmick/BattleCryPluggin/raw/master/dist/cardDB.enUS.xml) for card list)
+* Delay: How long to wait until playing audio file
+* CardSource: 'All' to play it if either player plays it
+* CardSource: 'Player' to play it ONLY when you play a card
+* CardSource: 'Opponent' to play it ONLY when your opponent plays a card
 
 ## Working
 
@@ -16,8 +25,6 @@ Then you go into Options -> Tracker -> Pluggins -> Battle Cry -> Enable
 
 ## Needs to be done
 
-* Change John Cena Delay to match the end of "Who am I?"
-* Change HardCoded mp3 to card mapper to be done via xml or csv (so anyone can make any sfx on battlecry)
 * Add Other events, like on draw, on death, on win/loose game
 * Fix the time delay as currently it locks the entire thread
 
