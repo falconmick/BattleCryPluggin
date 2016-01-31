@@ -237,4 +237,4 @@ _Pvt_Extensions
 .fake/
 
 # custom
-dist/AudioFiles
+dist/

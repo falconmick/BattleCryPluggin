@@ -8,7 +8,7 @@ Then you go into Options -> Tracker -> Pluggins -> Battle Cry -> Enable
 If you want to customise what card triggers what sound go into the AudioFiles directory inside of pluggins and modify cardsoundconfig.xml
 to add another, coppy the SoundPlaySetting node and modify:
 * FileName: what file (relitive to AudioFiles directory) do you want to play
-* CardId: what CardId is it (see [here](https://github.com/falconmick/BattleCryPluggin/blob/master/dist/cardDB.enUS.xml) for card list)
+* CardId: what CardId is it (see [here](https://github.com/falconmick/BattleCryPluggin/blob/master/cardDB.enUS.xml) for card list)
 * Delay: How long to wait until playing audio file (in milliseconds)
 * CardSource: 'All' to play it if either player plays it
 * CardSource: 'Player' to play it ONLY when you play a card
