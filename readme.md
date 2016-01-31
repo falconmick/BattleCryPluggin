@@ -1,4 +1,4 @@
-## Anyfin Can Lethal - A plugin for Hearthstone Deck Tracker
+## BattleCry - A plugin for Hearthstone Deck Tracker
 
 [Download stable](https://github.com/falconmick/BattleCryPluggin/raw/master/dist/BattleCryPlugin%20v0.0.4.zip)
 
