@@ -26,7 +26,7 @@ to add another, coppy the SoundPlaySetting node and modify:
 ## Needs to be done
 
 * Add Other events, like on draw, on death, on win/loose game
-* Fix the time delay as currently it locks the entire thread
+* Add menu option to add/remove sounds for when you play a card
 
 ## Contributing
 
