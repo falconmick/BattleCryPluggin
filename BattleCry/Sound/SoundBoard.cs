@@ -33,11 +33,18 @@ namespace BattleCry.Sound
 
         public void Play(SoundPlaySetting soundPlaySettings)
         {
-            _playQueue.Add(new PlayQueueItem
+            if(soundPlaySettings.Delay <= 0)
             {
-                SoundPlaySetting = soundPlaySettings,
-                StartPlayingAfter = DateTime.Now.AddMilliseconds(soundPlaySettings.Delay).Ticks
-            });
+                DelayedPlayback(soundPlaySettings);
+            }
+            else
+            {
+                _playQueue.Add(new PlayQueueItem
+                {
+                    SoundPlaySetting = soundPlaySettings,
+                    StartPlayingAfter = DateTime.Now.AddMilliseconds(soundPlaySettings.Delay).Ticks
+                });
+            }
         }
 
         private void DelayedPlayback(SoundPlaySetting soundPlaySettings)
