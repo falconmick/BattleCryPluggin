@@ -1,6 +1,6 @@
 ## BattleCry - A plugin for Hearthstone Deck Tracker
 
-[Download stable](https://github.com/falconmick/BattleCryPluggin/raw/master/dist/BattleCryPlugin%20v0.0.4.zip)
+[Download](https://github.com/falconmick/BattleCryPluggin/releases/)
 
 Currently in early development. All you have to do is extract the zip into your pluggin folder
 Then you go into Options -> Tracker -> Pluggins -> Battle Cry -> Enable
