@@ -15,6 +15,9 @@ to add another, coppy the SoundPlaySetting node and modify:
 * CardSource: 'All' to play it if either player plays it
 * CardSource: 'Player' to play it ONLY when you play a card
 * CardSource: 'Opponent' to play it ONLY when your opponent plays a card
+* 
+
+##### I would love to see what all you guys bind :) Please tweet at me [@falconmick](https://twitter.com/falconmick) your bindings or even better a video showing me your setups!!
 
 ## Working
 
@@ -32,7 +35,7 @@ to add another, coppy the SoundPlaySetting node and modify:
 
 ## Contributing
 
-Currently as this is still early I doubt I will want any contribs other than anything you notice wrong + bugs, but as I have the basic functionality to calculate lethal I will probably look for comunity improvements.
+Feel free to submit a pull request. It's not the tidiest solution, but try to follow my folder setup. Mainly don't put any files in the project root as I like to keep only the point of entry at the root (the IPluggin in this case)
 
 ## Hearthstone Deck Tracker
 See https://github.com/Epix37/Hearthstone-Deck-Tracker for the project page this plugin was developed against.
