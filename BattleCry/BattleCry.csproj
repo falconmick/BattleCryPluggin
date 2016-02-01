@@ -56,6 +56,7 @@
     <Compile Include="Sound\Model\PlayQueueItem.cs" />
     <Compile Include="Sound\SoundBoard.cs" />
     <Compile Include="Sound\ConfigCardSoundPicker.cs" />
+    <Compile Include="Util\Helper.cs" />
     <Compile Include="Util\IUpdateable.cs" />
     <Compile Include="Util\Model\CardSource.cs" />
     <Compile Include="Util\Model\SoundPlaySetting.cs" />

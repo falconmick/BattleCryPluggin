@@ -14,10 +14,12 @@ namespace BattleCry
     public class BattleCryPlugin : IPlugin
     {
         private readonly IGameMonitor _gameMonitor;
-        private readonly string _soundFileDir = "Plugins\\AudioFiles\\";
+        private readonly string _soundFileDir;
 
         public BattleCryPlugin()
         {
+            var dllLocation = Helper.GetPluginDllLocation();
+            _soundFileDir = dllLocation + "\\AudioFiles\\";
             var soundBoard = new SoundBoard(_soundFileDir);
             var configManager = new XmlConfigManager();
             var cardSoundPicker = new ConfigCardSoundPicker(configManager, _soundFileDir + "cardsoundconfig.xml");
