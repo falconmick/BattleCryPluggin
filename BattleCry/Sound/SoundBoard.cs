@@ -33,7 +33,8 @@ namespace BattleCry.Sound
 
         public void Play(SoundPlaySetting soundPlaySettings)
         {
-            if(soundPlaySettings.Delay <= 0)
+            Hearthstone_Deck_Tracker.Utility.Logging.Log.Info($"Playing: cardid: ${soundPlaySettings.CardId}, file name: ${soundPlaySettings.FileName}");
+            if (soundPlaySettings.Delay <= 0)
             {
                 DelayedPlayback(soundPlaySettings);
             }

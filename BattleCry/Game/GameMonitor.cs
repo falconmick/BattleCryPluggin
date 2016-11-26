@@ -19,7 +19,7 @@ namespace BattleCry.Game
         {
             Hearthstone_Deck_Tracker.API.GameEvents.OnOpponentPlay.Add(_playHandler.OnOpponentPlay);
             Hearthstone_Deck_Tracker.API.GameEvents.OnPlayerPlay.Add(_playHandler.OnPlayerPlay);
-            Hearthstone_Deck_Tracker.Logger.WriteLine("Setup BattleCry Event Handlers");
+            Hearthstone_Deck_Tracker.Utility.Logging.Log.Info("Setup BattleCry Event Handlers");
         }
 
         public void Update()

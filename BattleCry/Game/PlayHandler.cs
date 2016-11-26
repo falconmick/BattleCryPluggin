@@ -36,12 +36,12 @@ namespace BattleCry.Game
             var soundToPlay = _cardSoundPicker.GetBattleCryFor(card, cardSource);
             if(soundToPlay == null)
             {
-                Hearthstone_Deck_Tracker.Logger.WriteLine("BattleCry SFX not found");
+                Hearthstone_Deck_Tracker.Utility.Logging.Log.Info("BattleCry SFX not found");
                 return;
             }
 
             _soundBoard.Play(soundToPlay);
-            Hearthstone_Deck_Tracker.Logger.WriteLine("BattleCry Sound Effect Triggered");
+            Hearthstone_Deck_Tracker.Utility.Logging.Log.Info("BattleCry Sound Effect Triggered");
         }
 
         public void Update()
